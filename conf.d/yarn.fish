@@ -1,1 +1,1 @@
-set -x PATH $HOME/.yarn/bin $PATH
+[ -d $HOME/.yarn/bin ] && set PATH $HOME/.yarn/bin $PATH
