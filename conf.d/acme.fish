@@ -1,1 +1,1 @@
-[ -d $HOME/.acme.sh ] && PATH $PATH $HOME/.acme.sh
+[ -d $HOME/.acme.sh ] && set PATH $PATH $HOME/.acme.sh
