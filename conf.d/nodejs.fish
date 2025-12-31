@@ -6,5 +6,7 @@ if not contains jorgebucaran/nvm.fish (fisher list 2>/dev/null)
     fisher install jorgebucaran/nvm.fish
 end
 
-set -U nvm_mirror https://mirrors.ustc.edu.cn/node/
-#export NVM_NODEJS_ORG_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
+if test in_cn
+    set -U nvm_mirror https://mirrors.ustc.edu.cn/node/
+    #export NVM_NODEJS_ORG_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
+end
