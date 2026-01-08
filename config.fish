@@ -19,5 +19,11 @@ end
 
 # 实际运行环境
 if contains jorgebucaran/nvm.fish (fisher list 2>/dev/null) && test -f $HOME/.nvmrc
-  nvm use > /dev/null
+  # check version from .nvmrc eq current version
+  set nvm_current_version (nvm current)
+  set nvm_desired_version (cat $HOME/.nvmrc | string trim)
+  if test $nvm_current_version != $nvm_desired_version
+    echo "切换 Node.js 版本到 $nvm_desired_version ..."
+    nvm use $nvm_desired_version > /dev/null
+  end
 end
