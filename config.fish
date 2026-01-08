@@ -1,13 +1,23 @@
+# 前置运行环境
 if status is-interactive
-  # Commands to run in interactive sessions can go here
+  # 关闭欢迎信息
+  set -U fish_greeting ""
 
-  set __check_location (curl -s -m 2 https://cloudflare.com/cdn-cgi/trace|grep loc=|cut -d'=' -f2)
+  # 检测是否在中国大陆
+  set -U in_cn false
+  set __check_location (curl -s -m 1.2 https://cloudflare.com/cdn-cgi/trace|grep loc=|cut -d'=' -f2)
   if test $__check_location = "CN"
     set -U in_cn true
-    echo "cloudflare location return cn, use china mirrors"
-  end 
+  end
+
+  # 检查并安装 nvm.fish 插件，同时设置清华镜像
+  if not contains jorgebucaran/nvm.fish (fisher list 2>/dev/null)
+      echo "nvm.fish 未安装，正在通过 fisher 安装..."
+      fisher install jorgebucaran/nvm.fish
+  end
 end
 
+# 实际运行环境
 if contains jorgebucaran/nvm.fish (fisher list 2>/dev/null) && test -f $HOME/.nvmrc
-  nvm use
+  nvm use > /dev/null
 end
