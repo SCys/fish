@@ -5,7 +5,11 @@ if status is-interactive
 
   # 检测是否在中国大陆
   set -U in_cn false
-  set __check_location (curl -s -m 1.2 https://cloudflare.com/cdn-cgi/trace|grep loc=|cut -d'=' -f2)
+  set -U __check_location ""
+  #set __check_location (curl -s -m 1.2 https://cloudflare.com/cdn-cgi/trace|grep loc=|cut -d'=' -f2)
+  #set __check_location (curl -s -m 1.2 https://www.cloudflare-cn.com/cdn-cgi/trace|grep loc=|cut -d'=' -f2)
+  #set __check_location (curl -s -m 1.2 https://www.visa.cn/cdn-cgi/trace|grep loc=|cut -d'=' -f2)
+  set __check_location (curl -s -m 0.8 https://www.shopify.com/cdn-cgi/trace|grep loc=|cut -d'=' -f2)
   if test $__check_location = "CN"
     set -U in_cn true
   end

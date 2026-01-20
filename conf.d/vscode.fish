@@ -19,7 +19,8 @@ if is_code_server
   # If it's not a code-server session, set the proxy
   #set -gx HTTP_PROXY "http://service-hy.nodes.iscys.com:5002"
   #set -gx HTTPS_PROXY "http://service-hy.nodes.iscys.com:5002"
-  
+
+  # ping to check if the proxy server is reachable
   set -gx HTTP_PROXY "http://100.64.0.12:5002"
   set -gx HTTPS_PROXY "http://100.64.0.12:5002"
   #if you need to use socks5 proxy
