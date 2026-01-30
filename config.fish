@@ -32,3 +32,4 @@ if contains edc/bass (fisher list 2>/dev/null) && test -f $HOME/.nvm/nvm.sh
     end
   end
 end
+
