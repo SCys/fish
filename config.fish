@@ -38,9 +38,4 @@ if status is-interactive
       end
     end
   end
-
-  # OpenClaw Completion
-  if test -f "$HOME/.openclaw/completions/openclaw.fish"
-    source "$HOME/.openclaw/completions/openclaw.fish"
-  end
 end
