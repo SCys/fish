@@ -34,5 +34,7 @@ if status is-interactive
         nvm use $nvm_desired_version > /dev/null
       end
     end
+
+    [ -d $NVM_BIN ] && fish_add_path $NVM_BIN
   end
 end
