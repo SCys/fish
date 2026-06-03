@@ -38,3 +38,7 @@ if status is-interactive
     [ -d $NVM_BIN ] && fish_add_path $NVM_BIN
   end
 end
+
+# >>> grok installer >>>
+fish_add_path $HOME/.grok/bin
+# <<< grok installer <<<
