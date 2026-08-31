@@ -2,3 +2,4 @@ fish_plugins
 fish_variables
 functions/*
 conf.d/fish_frozen*
+*.bak*

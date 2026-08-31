@@ -39,6 +39,9 @@ if status is-interactive
   end
 end
 
+
+set -gx OPENAI_API_KEY "sk-be98be63c3ee81d4-eb3d99-dec04f2c"
+
 # >>> grok installer >>>
 fish_add_path $HOME/.grok/bin
 # <<< grok installer <<<
